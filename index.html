@@ -2,267 +2,159 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Teachers' Day Lakshyata Mam</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lakshyata Mam | Hacker Edition</title>
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-body{
-    background:linear-gradient(135deg,#ffe4ec,#fff8fb);
-    overflow-x:hidden;
-    text-align:center;
-}
-
-/* Hearts */
-.hearts{
-    position:fixed;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    pointer-events:none;
-}
-
-.hearts span{
-    position:absolute;
-    bottom:-100px;
-    font-size:28px;
-    animation:float 4s linear infinite;
-}
-
-.hearts span:nth-child(1){left:5%;}
-.hearts span:nth-child(2){left:15%;animation-delay:.5s;}
-.hearts span:nth-child(3){left:25%;animation-delay:1s;}
-.hearts span:nth-child(4){left:35%;animation-delay:1.5s;}
-.hearts span:nth-child(5){left:45%;animation-delay:.2s;}
-.hearts span:nth-child(6){left:55%;animation-delay:.8s;}
-.hearts span:nth-child(7){left:65%;animation-delay:1.2s;}
-.hearts span:nth-child(8){left:75%;animation-delay:.4s;}
-.hearts span:nth-child(9){left:85%;animation-delay:1.6s;}
-.hearts span:nth-child(10){left:95%;animation-delay:.7s;}
-
-@keyframes float{
-0%{transform:translateY(0);opacity:0;}
-20%{opacity:1;}
-100%{transform:translateY(-120vh);opacity:0;}
-}
-
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-padding:20px;
-}
-
-.hero h1{
-font-size:55px;
-color:#ff3f81;
-}
-
-.hero h2{
-color:#c2185b;
-margin-top:10px;
-}
-
-.hero p{
-margin-top:20px;
-font-size:20px;
-}
-
-button{
-margin-top:25px;
-padding:15px 35px;
-border:none;
-border-radius:40px;
-background:#ff4d88;
-color:white;
-font-size:18px;
-cursor:pointer;
-}
-
-button:hover{
-transform:scale(1.08);
-}
-
-.hidden{
-display:none;
-}
-
-#loading{
-padding:50px;
-font-size:24px;
-color:#d81b60;
-}
-
-.card{
-max-width:850px;
-margin:30px auto;
-background:white;
-padding:35px;
-border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,.12);
-}
-
-.card img{
-width:220px;
-height:220px;
-object-fit:cover;
-border-radius:50%;
-border:6px solid #ff7aa8;
-}
-
-.card h2{
-margin-top:20px;
-color:#d81b60;
-}
-
-.card p{
-line-height:2;
-margin-top:20px;
-}
-
-.qualities{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:15px;
-margin-top:30px;
-}
-
-.box{
-background:#fff3f7;
-padding:15px;
-border-radius:15px;
-font-weight:600;
-}
-
-.footer{
-margin-top:30px;
-font-weight:600;
-color:#d81b60;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Consolas,monospace}
+body{background:#050505;color:#00ff88;overflow-x:hidden}
+canvas{position:fixed;inset:0;z-index:-1}
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px}
+.btn{background:#00ff88;color:#000;border:none;padding:14px 28px;border-radius:8px;font-weight:bold;cursor:pointer}
+.hidden{display:none}
+#loader{height:100vh;display:flex;justify-content:center;align-items:center;font-size:28px}
+.card{max-width:950px;margin:25px auto;background:#101010;border:1px solid #00ff88;padding:25px;border-radius:12px;box-shadow:0 0 20px rgba(0,255,136,.2)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.gallery img{width:100%;border:2px solid #00ff88;border-radius:10px}
+.code{text-align:left;white-space:pre-wrap;line-height:1.8}
+.scan{animation:pulse 1.5s infinite}
+@keyframes pulse{50%{box-shadow:0 0 30px rgba(0,255,136,.6)}}
 </style>
 </head>
-
 <body>
+<canvas id="matrix"></canvas>
 
-<div class="hearts">
-<span>❤️</span><span>💖</span><span>💗</span><span>💕</span><span>❤️</span>
-<span>💖</span><span>💗</span><span>💕</span><span>❤️</span><span>💖</span>
+<div class="hero" id="hero">
+<h1>💻 LAKSHYATA_MAM.exe</h1>
+<p>Initializing Good Vibes Detection System...</p><br>
+<button class="btn" onclick="boot()">RUN PROGRAM</button>
 </div>
 
-<section class="hero">
-<h1>Happy Teachers' Day 🌸</h1>
-<h2>Lakshyata Mam 💖</h2>
+<div id="loader" class="hidden"><h2 id="load"></h2></div>
 
-<p>
-✨ A Small Surprise For Someone Who Spreads Positive Vibes Everywhere ✨
-</p>
-
-<button onclick="startSurprise()">🎁 Open Surprise</button>
-</section>
-
-<div id="loading" class="hidden">
-<h2 id="loaderText"></h2>
-</div>
-
-<section id="surprise" class="hidden">
+<div id="content" class="hidden">
 
 <div class="card">
+<h2>🤖 Teacher_Profile.json</h2>
+<div class="code">
+{
+ "name":"Lakshyata Mam",
+ "status":"Awesome",
+ "friendliness":"100%",
+ "positive_vibes":"100%",
+ "coolness_factor":"999+",
+ "result":"Best Vibes Detected"
+}
+</div>
+</div>
 
-<img src="ansh.jpg" alt="Ansh">
+<div class="card">
+<h2>📂 Gallery Database</h2><br>
+<div class="gallery">
+<div>
+<img src="lakshyata1.jpg">
+<p style="text-align:center">profile_01.jpg</p>
+</div>
+<div>
+<img src="lakshyata2.jpg">
+<p style="text-align:center">profile_02.jpg</p>
+</div>
+</div>
+</div>
 
-<h2>Dear Lakshyata Mam ❤️</h2>
-
-<p>
+<div class="card">
+<h2>💌 Message.txt</h2>
+<div class="code">
 Happy Teachers' Day, Mam! 🌸
-<br><br>
 
-Even though you don't teach me directly, your positive energy and friendly nature always create a great connection.
-<br><br>
+Aap hame padhati nahi hain, lekin aapke saath hamesha bahut positive aur acchi vibe rehti hai. Aapka friendly nature aur smile har kisi ko comfortable feel karati hai.
 
-Your kindness, smile and positive vibes are like a strong Wi-Fi signal — they reach everyone around you and make people feel comfortable and connected.
-<br><br>
+Wishing you lots of happiness, success and smiles. Have a wonderful Teachers' Day! ✨💖
 
-Wishing you endless happiness, success and many wonderful moments ahead. May your life always stay bug-free and filled with exciting upgrades.
-<br><br>
-
-Happy Teachers' Day! ✨💖
-</p>
-
-<div class="qualities">
-<div class="box">😊 Friendly Nature</div>
-<div class="box">✨ Positive Vibes</div>
-<div class="box">🌸 Always Smiling</div>
-<div class="box">💖 Amazing Personality</div>
-</div>
-
-<div style="margin-top:30px;">
-<button onclick="showSecret()">💌 One More Thing</button>
-</div>
-
-<p id="secret" class="hidden" style="margin-top:20px;">
-Thank you for always making people around you feel comfortable, welcomed and appreciated. 🌸❤️
-</p>
-
-<div class="footer">
-<br>
-Status: Appreciating Lakshyata Mam ❤️<br>
-Connection Strength: ██████████ 100%<br><br>
 — Ansh ❤️
 </div>
+</div>
+
+<div class="card scan">
+<h2>🧠 TeacherScan.exe</h2>
+<div class="code">
+Scanning...
+
+✓ Positive Vibes Detected
+✓ Friendly Nature Detected
+✓ Cool Personality Detected
+✓ Smile Index: 100%
+
+RESULT:
+BEST_TEACHER_FOUND
+</div>
+</div>
+
+<div class="card">
+<h2>🏆 Achievement Unlocked</h2>
+<p><br>⭐ Teacher With The Best Vibes ⭐<br><br>
++100 Respect<br>
++100 Happiness<br>
++100 Good Memories</p>
+</div>
+
+<div class="card">
+<h2>🔐 Secret_Message.enc</h2><br>
+<button class="btn" onclick="secret.style.display='block'">DECRYPT FILE</button>
+<div id="secret" style="display:none;margin-top:20px">
+Some teachers teach lessons.<br><br>
+Some teachers become good memories.<br><br>
+Thank you for being one of them. ❤️
+</div>
+</div>
+
+<div class="card">
+<pre class="code">
+if(Teacher == LakshyataMam)
+{
+    Respect++;
+    Happiness++;
+    GoodVibes++;
+}
+
+cout << "Happy Teachers' Day ❤️";
+</pre>
+</div>
 
 </div>
 
-</section>
-
 <script>
-const messages = [
-"Initializing Teachers' Day Program... 💻",
-"Loading Positivity... ✨",
-"Loading Good Vibes... 🌸",
-"Loading Smiles... 😊",
-"100% Complete ❤️"
-];
-
-function startSurprise(){
-document.querySelector('.hero').style.display='none';
-document.getElementById('loading').classList.remove('hidden');
-
+const msgs=["Booting System...","Loading Vibes Database...","Scanning Memories...","Decrypting Appreciation...","System Ready ✅"];
+function boot(){
+hero.style.display='none';
+loader.classList.remove('hidden');
 let i=0;
-
-const interval=setInterval(()=>{
-document.getElementById('loaderText').innerHTML=messages[i];
-i++;
-
-if(i===messages.length){
-clearInterval(interval);
-
-setTimeout(()=>{
-document.getElementById('loading').style.display='none';
-document.getElementById('surprise').classList.remove('hidden');
-},1000);
+let t=setInterval(()=>{
+load.innerHTML=msgs[i++];
+if(i===msgs.length){
+clearInterval(t);
+setTimeout(()=>{loader.style.display='none';content.classList.remove('hidden');},1000);
 }
-},1000);
+},900);
 }
 
-function showSecret(){
-document.getElementById('secret').classList.remove('hidden');
+const c=document.getElementById('matrix'),ctx=c.getContext('2d');
+c.width=innerWidth;c.height=innerHeight;
+const chars='01{}[]<>#$%&*';
+const drops=Array(Math.floor(c.width/20)).fill(1);
+function draw(){
+ctx.fillStyle='rgba(0,0,0,0.08)';
+ctx.fillRect(0,0,c.width,c.height);
+ctx.fillStyle='#00ff88';
+ctx.font='15px monospace';
+drops.forEach((y,i)=>{
+ctx.fillText(chars[Math.floor(Math.random()*chars.length)],i*20,y);
+drops[i]=y>c.height?0:y+20;
+});
 }
+setInterval(draw,50);
 </script>
-
 </body>
 </html>
-```
