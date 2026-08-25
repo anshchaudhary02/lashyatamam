@@ -6,33 +6,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lakshyata Mam | Cat Edition 🐾</title>
+<title>Happy Teachers' Day | Lakshyata Mam ❤️</title>
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Trebuchet MS',sans-serif;
+font-family:'Segoe UI',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#fff8f0,#ffeef8,#f8f0ff);
-overflow-x:hidden;
+background:linear-gradient(135deg,#fffafc,#fff5f8,#fef8ff);
 color:#444;
+overflow-x:hidden;
 }
 
 .paws{
 position:fixed;
 inset:0;
 pointer-events:none;
-opacity:.08;
+opacity:.05;
 background-image:
-radial-gradient(circle at 20px 20px,#ff8cb4 8px,transparent 9px),
-radial-gradient(circle at 40px 12px,#ff8cb4 5px,transparent 6px),
-radial-gradient(circle at 12px 40px,#ff8cb4 5px,transparent 6px),
-radial-gradient(circle at 40px 40px,#ff8cb4 5px,transparent 6px);
-background-size:120px 120px;
+radial-gradient(circle at 20px 20px,#ff9ec4 8px,transparent 9px),
+radial-gradient(circle at 40px 12px,#ff9ec4 5px,transparent 6px),
+radial-gradient(circle at 12px 40px,#ff9ec4 5px,transparent 6px),
+radial-gradient(circle at 40px 40px,#ff9ec4 5px,transparent 6px);
+background-size:140px 140px;
 z-index:-1;
 }
 
@@ -46,42 +46,44 @@ text-align:center;
 padding:20px;
 }
 
+.cat{
+font-size:120px;
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+50%{transform:translateY(-15px);}
+}
+
 .hero h1{
 font-size:3rem;
-color:#ff5d9e;
-margin-bottom:15px;
+color:#ff5f9e;
+margin:15px 0;
 }
 
 .hero p{
-font-size:1.1rem;
+max-width:700px;
+line-height:1.8;
 color:#666;
-margin-bottom:25px;
+font-size:1.1rem;
 }
 
 .btn{
+margin-top:30px;
+padding:14px 30px;
+border:none;
+border-radius:50px;
 background:#ff77aa;
 color:white;
-border:none;
-padding:14px 30px;
-border-radius:40px;
-font-size:1rem;
-cursor:pointer;
 font-weight:bold;
-box-shadow:0 5px 20px rgba(255,119,170,.35);
+cursor:pointer;
+font-size:1rem;
+box-shadow:0 8px 20px rgba(255,119,170,.3);
 transition:.3s;
 }
 
 .btn:hover{
 transform:scale(1.05);
-}
-
-.cat{
-font-size:120px;
-animation:bounce 2s infinite;
-}
-
-@keyframes bounce{
-50%{transform:translateY(-15px);}
 }
 
 .hidden{
@@ -94,23 +96,23 @@ display:flex;
 justify-content:center;
 align-items:center;
 font-size:2rem;
-color:#ff5d9e;
 text-align:center;
+color:#ff5f9e;
 padding:20px;
 }
 
 .card{
-max-width:950px;
-margin:25px auto;
+max-width:1000px;
+margin:30px auto;
 background:white;
-padding:25px;
+padding:30px;
 border-radius:25px;
 box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
 .card h2{
-margin-bottom:15px;
-color:#ff5d9e;
+margin-bottom:20px;
+color:#ff5f9e;
 }
 
 .gallery{
@@ -121,19 +123,27 @@ gap:20px;
 
 .gallery img{
 width:100%;
-border-radius:20px;
-border:4px solid #ffd5e5;
+border-radius:18px;
+border:4px solid #ffd7e7;
 }
 
-.code{
-line-height:1.9;
-white-space:pre-wrap;
+.message{
+display:flex;
+align-items:flex-start;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.message .catmsg{
+font-size:70px;
 }
 
 .bubble{
+flex:1;
 background:#fff0f7;
-padding:20px;
+padding:25px;
 border-radius:20px;
+line-height:2;
 position:relative;
 }
 
@@ -146,32 +156,35 @@ border:15px solid transparent;
 border-top-color:#fff0f7;
 }
 
-.catmsg{
-display:flex;
-align-items:center;
-gap:20px;
-flex-wrap:wrap;
+.note{
+line-height:2;
+font-size:1.05rem;
 }
 
-.bigcat{
-font-size:80px;
-}
-
-.scan{
-animation:glow 2s infinite;
-}
-
-@keyframes glow{
-50%{
-box-shadow:0 0 25px rgba(255,105,180,.4);
-}
+.special{
+background:linear-gradient(135deg,#fff6fb,#fff);
 }
 
 .footer{
 text-align:center;
-padding:40px;
-font-size:1.1rem;
+padding:50px 20px;
 color:#888;
+line-height:2;
+}
+
+.fade{
+animation:fade 1.5s ease;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 </style>
 </head>
@@ -184,61 +197,46 @@ color:#888;
 
 <div class="cat">🐱</div>
 
-<h1>LAKSHYATA MAM CAT EDITION</h1>
+<h1>Happy Teachers' Day 🌸</h1>
 
 <p>
-A special Teachers' Day surprise is being delivered by our cutest messenger...
+A small surprise filled with gratitude, appreciation and lots of good wishes for someone who always spreads positivity and kindness.
 </p>
 
-<button class="btn" onclick="boot()">
-OPEN SURPRISE 🐾
+<button class="btn" onclick="startSurprise()">
+Open Surprise 🐾
 </button>
 
 </div>
 
 <div id="loader" class="hidden">
-<h2 id="load"></h2>
+<h2 id="loadingText"></h2>
 </div>
 
-<div id="content" class="hidden">
+<div id="content" class="hidden fade">
 
 <div class="card">
 
-<h2>🐾 Cat_Profile.json</h2>
+<h2>🌷 Dear Lakshyata Mam</h2>
 
-<div class="code">
-{
- "recipient":"Lakshyata Mam",
- "cuteness":"100%",
- "kindness":"100%",
- "positive_vibes":"100%",
- "smile_level":"∞",
- "status":"Favourite Human Detected"
-}
-</div>
+<p class="note">
+Some people leave an impact not because of how much time they spend with others, but because of how positively they make everyone feel.
+</p>
 
 </div>
 
 <div class="card">
 
-<h2>📸 Happy Memories Gallery</h2>
-
-<br>
+<h2>📸 Lakshyata Mam</h2>
 
 <div class="gallery">
 
 <div>
-<img src="lakshyata1.jpg">
-<p style="text-align:center;margin-top:8px;">
-cute_memory_01.jpg
-</p>
+<img src="lakshyata1.jpg" alt="Lakshyata Mam">
 </div>
 
 <div>
-<img src="lakshyata2.jpg">
-<p style="text-align:center;margin-top:8px;">
-cute_memory_02.jpg
-</p>
+<img src="lakshyata2.jpg" alt="Lakshyata Mam">
 </div>
 
 </div>
@@ -247,11 +245,11 @@ cute_memory_02.jpg
 
 <div class="card">
 
-<h2>🐱 Message Delivered By Cat</h2>
+<h2>💌 A Message Delivered By A Cat</h2>
+
+<div class="message">
 
 <div class="catmsg">
-
-<div class="bigcat">
 🐈
 </div>
 
@@ -277,32 +275,41 @@ Wishing you lots of happiness, success and smiles. Have a wonderful Teachers' Da
 
 </div>
 
-<div class="card scan">
+<div class="card special">
 
-<h2>🐾 Human Scan Report</h2>
+<h2>🌟 Things Everyone Notices</h2>
 
-<div class="code">
-Scanning Human...
+<p class="note">
 
-✓ Positive Vibes Detected
-✓ Friendly Nature Detected
-✓ Kind Heart Detected
-✓ Smile Index: 100%
+✨ A friendly nature
 
-RESULT:
+<br>
 
-FAVOURITE_HUMAN_FOUND
-</div>
+✨ Positive vibes
+
+<br>
+
+✨ A comforting smile
+
+<br>
+
+✨ Kindness towards everyone
+
+<br>
+
+✨ The ability to make people feel comfortable
+
+</p>
 
 </div>
 
 <div class="card">
 
-<h2>🏆 Achievement Unlocked</h2>
+<h2>🏆 Appreciation Award</h2>
 
-<p style="line-height:2">
+<p class="note">
 
-⭐ Official Favourite Human Of Cats ⭐
+⭐ Teacher With The Best Vibes ⭐
 
 <br><br>
 
@@ -318,7 +325,7 @@ FAVOURITE_HUMAN_FOUND
 
 <br>
 
-+999 Cat Hugs 🐾
++Infinite Good Wishes ❤️
 
 </p>
 
@@ -326,21 +333,13 @@ FAVOURITE_HUMAN_FOUND
 
 <div class="card">
 
-<h2>🔐 Secret Paw Message</h2>
+<h2>🔐 Secret Message</h2>
 
-<br>
-
-<button class="btn"
-onclick="secret.style.display='block'">
-OPEN MESSAGE
+<button class="btn" onclick="document.getElementById('secret').style.display='block'">
+Open Message
 </button>
 
-<div id="secret"
-style="display:none;margin-top:20px;line-height:2">
-
-🐱 Meow...
-
-<br><br>
+<div id="secret" style="display:none;margin-top:25px;line-height:2">
 
 Some teachers teach lessons.
 
@@ -358,41 +357,19 @@ Thank you for being one of them. ❤️
 
 <div class="card">
 
-<pre class="code">
-if(Human == LakshyataMam)
-{
-    Respect++;
-    Happiness++;
-    GoodVibes++;
-    CatFriendship++;
-}
+<h2>🐾 One Last Message</h2>
 
-cout << "Happy Teachers' Day ❤️";
-</pre>
+<p class="note">
 
-</div>
-
-<div class="card">
-
-<h2>🐾 Final Note</h2>
-
-<p style="line-height:2">
-
-Dear Lakshyata Mam,
+The cat who delivered this message has only one thing left to say...
 
 <br><br>
 
-Every cat in this website has only one message:
+Thank you for spreading positivity wherever you go.
 
 <br><br>
 
-Thank you for your positivity,
-your kindness,
-and the wonderful vibes you spread around everyone.
-
-<br><br>
-
-Happy Teachers' Day! 🌸
+Happy Teachers' Day, Lakshyata Mam! 🌸❤️
 
 </p>
 
@@ -400,7 +377,15 @@ Happy Teachers' Day! 🌸
 
 <div class="footer">
 
-🐱 Made with respect, gratitude & lots of paws by Ansh ❤️
+🐱 A tiny message delivered by a cat,
+
+<br>
+
+but written with lots of respect and gratitude.
+
+<br><br>
+
+— Ansh ❤️
 
 </div>
 
@@ -408,35 +393,35 @@ Happy Teachers' Day! 🌸
 
 <script>
 
-const msgs=[
-"🐾 Calling Cat Messenger...",
-"🐱 Packing Appreciation Letter...",
-"💌 Delivering Happiness...",
-"🌸 Loading Good Memories...",
+const messages = [
+"🐾 Calling the messenger...",
+"💌 Preparing a special message...",
+"🌷 Collecting good wishes...",
+"✨ Adding lots of positivity...",
 "✅ Surprise Ready!"
 ];
 
-function boot(){
+function startSurprise(){
 
-hero.style.display='none';
+document.getElementById("hero").style.display="none";
 
-loader.classList.remove('hidden');
+document.getElementById("loader").classList.remove("hidden");
 
 let i=0;
 
-let t=setInterval(()=>{
+let interval=setInterval(()=>{
 
-load.innerHTML=msgs[i++];
+document.getElementById("loadingText").innerHTML=messages[i++];
 
-if(i===msgs.length){
+if(i===messages.length){
 
-clearInterval(t);
+clearInterval(interval);
 
 setTimeout(()=>{
 
-loader.style.display='none';
+document.getElementById("loader").style.display="none";
 
-content.classList.remove('hidden');
+document.getElementById("content").classList.remove("hidden");
 
 },1000);
 
