@@ -2,103 +2,229 @@
 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Teachers' Day ❤️</title>
-<style>
-body{margin:0;font-family:Segoe UI,sans-serif;background:linear-gradient(135deg,#fffafc,#fff1f7,#fdf7ff);text-align:center;color:#444}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px}
-.cat{font-size:150px;cursor:pointer;transition:.3s}
-.cat:hover{transform:scale(1.08)}
-.note{color:#ff5f9e;font-weight:600}
-.hidden{display:none}
-.card{max-width:900px;margin:30px auto;background:#fff;padding:30px;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.gallery img{width:100%;border-radius:18px}
-#delivery{position:relative;height:220px;overflow:hidden}
-.walkcat{position:absolute;left:-120px;top:40px;font-size:100px}
-.envelope{position:absolute;left:50%;top:90px;font-size:60px;opacity:0}
-.walk{animation:walk 4s forwards}
-.drop{animation:drop 1s forwards}
-@keyframes walk{from{left:-120px}to{left:42%}}
-@keyframes drop{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(30px)}}
-.message{background:#fff0f7;padding:25px;border-radius:18px;line-height:2}
-h1,h2{color:#ff5f9e}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Teacher Bestiee 💖</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="hero" id="start">
-<div class="cat" onclick="openLetter()">🐱</div>
-<h1>Happy Teachers' Day 🌸</h1>
-<p class="note">Tap the cat to receive a special letter 🐾</p>
-</div>
+    <!-- ================= NAVBAR ================= -->
 
-<div id="main" class="hidden">
+    <nav class="navbar">
 
-<div class="card">
-<h2>🐾 Special Delivery</h2>
-<div id="delivery">
-<div id="cat2" class="walkcat">🐱</div>
-<div id="letter" class="envelope">💌</div>
-</div>
-</div>
+        <div class="logo">
+            For My Teacher Bestiee 💖
+        </div>
 
-<div id="content" class="hidden">
+        <ul class="nav-links">
+            <li><a href="#welcome">About</a></li>
+            <li><a href="#journey">Journey</a></li>
+            <li><a href="#featured">Featured</a></li>
+        </ul>
 
-<div class="card">
-<h2>📸 Lakshyata Mam</h2>
-<div class="gallery">
-<img src="lakshyata1.jpg">
-<img src="lakshyata2.jpg">
-</div>
-</div>
+    </nav>
 
-<div class="card">
-<h2>💌 Message</h2>
-<div class="message">
-Happy Teachers' Day, Mam! 🌸<br><br>
-Aap hame padhati nahi hain, lekin aapke saath hamesha bahut positive aur acchi vibe rehti hai. Aapka friendly nature aur smile har kisi ko comfortable feel karati hai.
-<br><br>
-Wishing you lots of happiness, success and smiles. Have a wonderful Teachers' Day! ✨💖
-<br><br>
-— Ansh ❤️
-</div>
-</div>
+    <!-- ================= HERO ================= -->
 
-<div class="card">
-<h2>🔐 Secret Message</h2>
-<p style="line-height:2">
-Some teachers teach lessons.<br><br>
-Some teachers become good memories.<br><br>
-Thank you for being one of them. ❤️
-</p>
-</div>
+    <section class="hero">
 
-</div>
-</div>
+        <div class="hero-overlay"></div>
 
-<script>
-function openLetter(){
-document.getElementById('start').style.display='none';
-document.getElementById('main').classList.remove('hidden');
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
 
-const cat=document.getElementById('cat2');
-const letter=document.getElementById('letter');
+        <div class="hero-card">
 
-cat.classList.add('walk');
+            <span class="hero-tag">
+                ✨ Dedicated To
+            </span>
 
-setTimeout(()=>{
-letter.classList.add('drop');
-},4000);
+            <h1>
+                Lakshyata Didi 💖
+            </h1>
 
-setTimeout(()=>{
-document.getElementById('content').classList.remove('hidden');
-},5200);
-}
-</script>
+            <p class="hero-subtitle">
+                Teacher • Mentor • Friend • Bestie • Didi
+            </p>
+
+            <a href="#welcome" class="hero-btn">
+                Begin The Journey ✨
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ================= WELCOME ================= -->
+
+    <section id="welcome" class="welcome">
+
+        <div class="section-title">
+            <h2>For My Teacher Bestiee 💖</h2>
+        </div>
+
+        <div class="welcome-card">
+
+            <p>
+                Some people teach lessons.
+                Some leave memories.
+                Some leave both.
+            </p>
+
+            <p>
+                This website is dedicated to someone
+                who became much more than just a teacher.
+            </p>
+
+            <p>
+                Someone whose kindness, support,
+                positivity and presence made a difference.
+            </p>
+
+            <h3>— Ansh ❤️</h3>
+
+        </div>
+
+    </section>
+
+    <!-- ================= JOURNEY ================= -->
+
+    <section id="journey" class="journey">
+
+        <div class="section-title">
+            <h2>The Journey 🌸</h2>
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-card">
+                <h3>📚 Teacher</h3>
+                <p>
+                    It all started with a teacher
+                    who inspired and guided.
+                </p>
+            </div>
+
+            <div class="timeline-card">
+                <h3>🌟 Mentor</h3>
+                <p>
+                    A mentor whose words
+                    always encouraged growth.
+                </p>
+            </div>
+
+            <div class="timeline-card">
+                <h3>😊 Friend</h3>
+                <p>
+                    Conversations became easier,
+                    warmer and more comfortable.
+                </p>
+            </div>
+
+            <div class="timeline-card">
+                <h3>💖 Didi</h3>
+                <p>
+                    Somewhere along the way,
+                    Lakshyata Mam became
+                    Lakshyata Didi.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FEATURED PHOTO ================= -->
+
+    <section id="featured" class="featured">
+
+        <div class="section-title">
+            <h2>Featured Moment ✨</h2>
+        </div>
+
+        <div class="featured-container">
+
+            <div class="featured-image">
+
+                <!-- RED SUIT PHOTO -->
+
+                <img src="assets/photo3.jpg" alt="Lakshyata Didi">
+
+            </div>
+
+            <div class="featured-content">
+
+                <h3>
+                    Confidence. Grace. Positivity.
+                </h3>
+
+                <p>
+                    Some people naturally leave
+                    a positive impact wherever
+                    they go.
+                </p>
+
+                <p>
+                    Through every interaction,
+                    every lesson and every smile,
+                    they make life a little brighter.
+                </p>
+
+                <p>
+                    This page is a small appreciation
+                    for someone truly special.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <div class="cta-card">
+
+            <h2>
+                Ready For The Next Chapter? 📸
+            </h2>
+
+            <p>
+                Enter Lakshyata Didi's Photo Booth
+                and explore the next part
+                of this journey.
+            </p>
+
+            <a href="photobooth.html" class="cta-btn">
+                Enter The Photo Booth 📸
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            Made With Respect, Gratitude & Countless Memories ❤️
+        </p>
+
+        <p>
+            — Ansh
+        </p>
+
+    </footer>
 
 </body>
 </html>
